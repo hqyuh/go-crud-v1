@@ -1,0 +1,32 @@
+DELETE http://localhost:3001/api/v1/post/5
+Accept: application/json
+
+###
+GET http://localhost:3001/api/v1/posts/2
+Accept: application/json
+
+###
+GET http://localhost:3001/api/v1/posts
+Accept: application/json
+
+###
+PUT http://localhost:3001/api/v1/update-post
+Content-Type: application/json
+
+{
+  "id": 2,
+  "title": "Golang Book",
+  "body": "A good book!"
+}
+
+###
+POST http://localhost:3001/api/v1/create-post
+Content-Type: application/json
+
+{
+  "title": "TS Book",
+  "body": "A good book!"
+}
+
+###
+

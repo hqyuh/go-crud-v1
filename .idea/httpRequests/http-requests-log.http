@@ -1,0 +1,7 @@
+GET http://localhost:3001/api/v1/posts
+Accept: application/json
+
+<> 2022-10-23T234007.200.json
+
+###
+
