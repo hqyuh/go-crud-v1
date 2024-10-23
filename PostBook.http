@@ -1,31 +1,31 @@
-DELETE http://localhost:3001/api/v1/post/5
+DELETE http://localhost:8000/api/v1/post/4
 Accept: application/json
 
 ###
-GET http://localhost:3001/api/v1/posts/2
+GET http://localhost:8000/api/v1/posts/1
 Accept: application/json
 
 ###
-GET http://localhost:3001/api/v1/posts
+GET http://localhost:8000/api/v1/posts
 Accept: application/json
 
 ###
-PUT http://localhost:3001/api/v1/update-post
+PUT http://localhost:8000/api/v1/update-post
 Content-Type: application/json
 
 {
-  "id": 2,
+  "id": 1,
   "title": "Golang Book",
   "body": "A good book!"
 }
 
 ###
-POST http://localhost:3001/api/v1/create-post
+POST http://localhost:8000/api/v1/create-post
 Content-Type: application/json
 
 {
-  "title": "TS Book",
-  "body": "A good book!"
+  "title": "Go-1",
+  "body": "Go book"
 }
 
 ###

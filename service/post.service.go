@@ -1,9 +1,10 @@
 package service
 
 import (
-	"github.com/gin-gonic/gin"
 	"go-crud-v1/initalizers"
 	"go-crud-v1/models"
+
+	"github.com/gin-gonic/gin"
 )
 
 type PostRequest struct {

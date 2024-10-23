@@ -1,0 +1,38 @@
+services:
+  database:
+    container_name: go-database
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: $DB_USERNAME
+      POSTGRES_PASSWORD: $DB_PASSWORD
+      POSTGRES_DB: $DB_NAME
+    ports:
+      - $DB_PORT:5432
+    env_file:
+      - .env
+    volumes:
+      - .docker/db:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pgadmin:
+    container_name: go-pgadmin
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: hqh@example.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - 6000:80
+    restart: always
+
+networks:
+  default:
+    name: go-network
+
+volumes:
+  postgres_data:
+    driver: local
